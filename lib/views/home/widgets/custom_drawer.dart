@@ -100,8 +100,8 @@ class CustomDrawer extends StatelessWidget {
                 ),
                 onTap: () => controller.goToMyFriends(),
               ),
-              const ListTile(
-                title: Text(
+              ListTile(
+                title: const Text(
                   'Mis Grupos',
                   style: TextStyle(
                     color: Colors.white,
@@ -109,6 +109,7 @@ class CustomDrawer extends StatelessWidget {
                     fontSize: 16,
                   ),
                 ),
+                onTap: () => controller.goToMyGroups(),
               ),
               ListTile(
                 title: const Text(

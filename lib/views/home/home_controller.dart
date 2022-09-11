@@ -52,6 +52,10 @@ class HomeController extends GetxController {
     changeView(2, 'Friends');
   }
 
+  void goToMyGroups() {
+    changeView(3, 'Mis Grupos');
+  }
+
   Future<void> logOut() async {
     await FirebaseAuth.instance.signOut();
     Get.toNamed(RouteApp.login);
