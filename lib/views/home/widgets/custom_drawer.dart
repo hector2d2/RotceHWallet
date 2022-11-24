@@ -113,6 +113,17 @@ class CustomDrawer extends StatelessWidget {
               ),
               ListTile(
                 title: const Text(
+                  'Configuración',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16,
+                  ),
+                ),
+                onTap: () => controller.goToSettings(),
+              ),
+              ListTile(
+                title: const Text(
                   'Cerrar Sesión',
                   style: TextStyle(
                     color: Colors.white,

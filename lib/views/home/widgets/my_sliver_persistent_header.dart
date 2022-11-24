@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rwallet/views/home/widgets/icons_appbar.dart';
 
 import '../../../services/drawer_service.dart';
 import '../home_controller.dart';
@@ -59,15 +60,13 @@ class MySliverPersistentHeader extends SliverPersistentHeaderDelegate {
           Positioned(
             top: 1,
             right: 0,
-            child: IconButton(
-              alignment: Alignment.topLeft,
-              padding: EdgeInsets.zero,
-              onPressed: () {},
-              icon: Icon(
-                Icons.notifications,
-                color: Colors.white,
-                size: 40,
-              ),
+            child: GetBuilder<HomeController>(
+              id: 'homeTitle',
+              builder: (controller) {
+                return IconsAppBar(
+                  indexView: controller.indexView,
+                );
+              },
             ),
           ),
         ],

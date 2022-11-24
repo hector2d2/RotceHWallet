@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:rwallet/Data/user_default.dart';
 import 'package:rwallet/models/user_model.dart';
 import 'package:rwallet/provider/user_provider.dart';
 import 'package:rwallet/routes/route_app.dart';
@@ -15,14 +16,33 @@ class HomeController extends GetxController {
   int indexView = 0;
 
   HomeController() {
-    final user = FirebaseAuth.instance.currentUser;
-    userModel = Get.find<UserProvider>().currentUser;
+    userModel = getUserInfo();
     setInfoEmployee(
       userModel!.photo,
       userModel!.email,
       userModel!.displayName,
     );
     print(userModel);
+  }
+
+  UserModel getUserInfo() {
+    var userModel = Get.find<UserProvider>().currentUser;
+    if (userModel != null) return userModel;
+    return createFakeUserModel();
+  }
+
+  UserModel createFakeUserModel() {
+    final user = FirebaseAuth.instance.currentUser;
+    print(user?.uid);
+    print('DisplayName');
+    UserModel userModel = UserModel(
+      displayName: user?.displayName ?? 'Unknown',
+      uid: user!.uid,
+      email: user.email!,
+      provider: 'Unknown',
+      photo: UserDefault.photo,
+    );
+    return userModel;
   }
 
   void setHomeTitle(String title) {
@@ -54,6 +74,10 @@ class HomeController extends GetxController {
 
   void goToMyGroups() {
     changeView(3, 'Mis Grupos');
+  }
+
+  void goToSettings() {
+    changeView(4, 'Configuración');
   }
 
   Future<void> logOut() async {

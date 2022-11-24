@@ -7,6 +7,7 @@ import 'package:rwallet/views/home/home_controller.dart';
 import 'package:rwallet/views/home/widgets/custom_drawer.dart';
 import 'package:rwallet/views/my_wallet/my_wallet_view.dart';
 import 'package:rwallet/views/perfil/perfil_view.dart';
+import 'package:rwallet/views/setttings/settings_view.dart';
 
 import 'widgets/my_sliver_persistent_header.dart';
 
@@ -43,7 +44,8 @@ class HomeView extends StatelessWidget {
                             MyWalletView(),
                             PerfilView(),
                             FriendsView(),
-                            GroupsView()
+                            GroupsView(),
+                            SettingsView(),
                           ],
                         );
                       },

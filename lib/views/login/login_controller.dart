@@ -52,9 +52,7 @@ class LoginController extends GetxController {
 
   Future<void> getUserInfo(String uid) async {
     final userInfo = await UserService.getUser(uid);
-    if (userInfo != null) {
-      setGlobalUser(userInfo);
-    }
+    setGlobalUser(userInfo!);
   }
 
   void setGlobalUser(UserModel user) {

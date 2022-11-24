@@ -9,8 +9,10 @@ import 'package:rwallet/views/home/home_view.dart';
 import 'package:rwallet/views/login/login_binding.dart';
 import 'package:rwallet/views/login/login_view.dart';
 import 'package:rwallet/views/menu_groups/menu_group_view.dart';
+import 'package:rwallet/views/perfil_info/perfil_info_view.dart';
 
 import '../views/menu_groups/menu_group_binding.dart';
+import '../views/perfil_info/perfil_info_binding.dart';
 
 class PagesApp {
   static List<GetPage> pages = [
@@ -38,6 +40,11 @@ class PagesApp {
       name: RouteApp.groupMenu,
       page: () => const MenuGroupView(),
       binding: MenuGroupBinding(),
+    ),
+    GetPage(
+      name: RouteApp.perfilInfo,
+      page: () => const PerfilInfo(),
+      binding: PerfilInfoBinding(),
     ),
   ];
 }

@@ -5,4 +5,5 @@ class RouteApp {
   static String authentication = '/authentication';
   static String friends = '/friends';
   static String groupMenu = '/groupMenu';
+  static String perfilInfo = "/perfil/info";
 }
