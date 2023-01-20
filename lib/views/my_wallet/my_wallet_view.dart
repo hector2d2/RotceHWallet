@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 class MyWalletView extends StatelessWidget {
@@ -5,10 +6,24 @@ class MyWalletView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        'walletview',
-      ),
+    return Column(
+      children: [
+        Container(
+          child: Text(
+            'walletview',
+          ),
+        ),
+        ElevatedButton(
+          onPressed: () async {
+            final fcmToken = await FirebaseMessaging.instance.getToken();
+            print("TOken : ");
+            print(fcmToken);
+          },
+          child: Text(
+            "Obtener token FCM",
+          ),
+        )
+      ],
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 import 'package:rwallet/Data/user_default.dart';
 import 'package:rwallet/models/user_model.dart';
@@ -23,6 +24,26 @@ class HomeController extends GetxController {
       userModel!.displayName,
     );
     print(userModel);
+  }
+
+  @override
+  void onInit() async {
+    super.onInit();
+    await requestNotificationPermission();
+  }
+
+  requestNotificationPermission() async {
+    NotificationSettings settings = await FirebaseMessaging.instance
+        .requestPermission(
+            alert: true,
+            announcement: false,
+            badge: true,
+            carPlay: false,
+            criticalAlert: false,
+            provisional: true,
+            sound: true);
+
+    print(settings.authorizationStatus);
   }
 
   UserModel getUserInfo() {
