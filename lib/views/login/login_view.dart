@@ -121,7 +121,6 @@ class LoginView extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 shape: const StadiumBorder(),
-                                primary: const Color(0xffF3C981),
                                 padding: const EdgeInsets.all(10)),
                             onPressed: () => controller.signIn(context),
                             child: const Text(

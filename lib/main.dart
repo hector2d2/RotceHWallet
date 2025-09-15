@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:rwallet/design.dart';
 import 'package:rwallet/routes/pages_app.dart';
 import 'package:rwallet/routes/route_app.dart';
+import 'package:rwallet/theme/custom_theme_data.dart';
 
 import 'firebase_options.dart';
 import 'utils/dependency_injection.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       getPages: PagesApp.pages,
       initialRoute: RouteApp.authentication,
+      theme: CustomThemeData.blueTheme,
     );
   }
 }

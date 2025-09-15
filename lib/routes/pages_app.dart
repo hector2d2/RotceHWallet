@@ -10,6 +10,7 @@ import 'package:rwallet/views/login/login_binding.dart';
 import 'package:rwallet/views/login/login_view.dart';
 import 'package:rwallet/views/menu_groups/menu_group_view.dart';
 import 'package:rwallet/views/perfil_info/perfil_info_view.dart';
+import 'package:rwallet/views/services_wallet/services_wallet_page.dart';
 
 import '../views/menu_groups/menu_group_binding.dart';
 import '../views/perfil_info/perfil_info_binding.dart';
@@ -44,6 +45,11 @@ class PagesApp {
     GetPage(
       name: RouteApp.perfilInfo,
       page: () => const PerfilInfo(),
+      binding: PerfilInfoBinding(),
+    ),
+    GetPage(
+      name: RouteApp.serviceswallet,
+      page: () => const ServicesWalletPage(),
       binding: PerfilInfoBinding(),
     ),
   ];

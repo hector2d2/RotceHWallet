@@ -48,11 +48,7 @@ class MySliverPersistentHeader extends SliverPersistentHeaderDelegate {
               builder: (controller) {
                 return Text(
                   controller.homeTitle,
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w500,
-                    color: Color(0xffF3C981),
-                  ),
+                  style: Theme.of(context).textTheme.titleLarge,
                 );
               },
             ),

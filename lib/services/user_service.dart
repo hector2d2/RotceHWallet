@@ -11,7 +11,9 @@ class UserService {
     try {
       final docUser = await users.doc(uid).get();
       if (docUser.exists) {
-        return UserModel.fromJson(docUser.data() as Map<String, dynamic>);
+        Map<String, dynamic> docUserData =
+            docUser.data() as Map<String, dynamic>;
+        return UserModel.fromJson(docUserData);
       }
 
       final user = FirebaseAuth.instance.currentUser;

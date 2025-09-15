@@ -8,8 +8,8 @@ class PerfilInfoController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    title = Get.arguments["title"];
-    body = Get.arguments["body"];
-    indexSelectInfo = Get.arguments["indexSelectInfo"];
+    title = Get.arguments?["title"] ?? '';
+    body = Get.arguments?["body"] ?? '';
+    indexSelectInfo = Get.arguments?["indexSelectInfo"] ?? 0;
   }
 }

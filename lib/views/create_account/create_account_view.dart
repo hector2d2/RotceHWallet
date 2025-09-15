@@ -149,7 +149,6 @@ class CreateAccountView extends StatelessWidget {
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
                                 shape: const StadiumBorder(),
-                                primary: const Color(0xffF3C981),
                                 padding: const EdgeInsets.all(10)),
                             onPressed: () async =>
                                 await controller.createAccount(context),
